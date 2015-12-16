@@ -18,6 +18,7 @@ namespace TankGameSample
         public Color Color;
         public float Angle;
         public float Power;
+        public KeyboardState OldKeyState;
     }
 
     public struct ParticleData
@@ -52,6 +53,7 @@ namespace TankGameSample
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            handler = new Handler();
         }
 
         protected override void Initialize()
@@ -78,7 +80,8 @@ namespace TankGameSample
             graphics.PreferredBackBufferHeight = 700;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
-            Window.Title = "Tank Game";
+            Window.Title = "Battle to Survive";
+
             backgroundTexture = Content.Load<Texture2D>("background");
             gameBackgroundTexture = Content.Load<Texture2D>("gameBackground");
             screenHight = device.PresentationParameters.BackBufferHeight;
@@ -88,11 +91,11 @@ namespace TankGameSample
             statisticScreen = new Rectangle(gameBackScreen.Right + 50, gameBackScreen.Top, 350, gameBackScreen.Height);
 
             tankTexture = Content.Load<Texture2D>("tank");
-            brickWallTexture = Content.Load<Texture2D>("brickWallNew");
+            brickWallTexture = Content.Load<Texture2D>("brickWall");
             stoneWallTexture = Content.Load<Texture2D>("stoneWall");
             waterTexture = Content.Load<Texture2D>("water");
-            coinPileTexture = Content.Load<Texture2D>("coinPile3");
-            lifePackTexture = Content.Load<Texture2D>("healthPack2");
+            coinPileTexture = Content.Load<Texture2D>("coin");
+            lifePackTexture = Content.Load<Texture2D>("life");
             bulletTexture = Content.Load<Texture2D>("bullet");
 
             statistics = Content.Load<SpriteFont>("PlayerStatistics");
@@ -114,8 +117,8 @@ namespace TankGameSample
         {
             time += gameTime.ElapsedGameTime.Milliseconds;
 
-            // Allows the game to exit
             processMouseInput();
+            processKeyBoardInput();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
@@ -212,8 +215,8 @@ namespace TankGameSample
             {
                 if (tank.health > 0)
                 {
-                    Vector2 newPosition = new Vector2(tank.position.X * 30 + gameScreen.X + 15, tank.position.Y * 30 + gameScreen.Y + 15);
-                    spriteBatch.Draw(tankTexture, newPosition, null, tank.color, tank.direction * MathHelper.PiOver2, new Vector2(15, 15), 1, SpriteEffects.None, 0);
+                    Vector2 newPosition = new Vector2(tank.position.X * 60 + gameScreen.X + 30, tank.position.Y * 60 + gameScreen.Y + 30);
+                    spriteBatch.Draw(tankTexture, newPosition, null, tank.color, tank.direction * MathHelper.PiOver2, new Vector2(30, 30), 1, SpriteEffects.None, 0);
                 }
             }
         }
@@ -224,7 +227,7 @@ namespace TankGameSample
             {
                 if (obstacle != null)
                 {
-                    Vector2 newPosition = new Vector2(obstacle.position.X * 30 + gameScreen.X, obstacle.position.Y * 30 + gameScreen.Y);
+                    Vector2 newPosition = new Vector2(obstacle.position.X * 60 + gameScreen.X, obstacle.position.Y * 60 + gameScreen.Y);
                     if (obstacle.type == "brickWall")
                     {
                         if (obstacle.damageLevel == 0)
@@ -266,7 +269,7 @@ namespace TankGameSample
             {
                 if (pile.isAlive)
                 {
-                    Vector2 newPos = new Vector2(pile.position.X * 30 + gameScreen.X, pile.position.Y * 30 + gameScreen.Y);
+                    Vector2 newPos = new Vector2(pile.position.X * 60+ gameScreen.X, pile.position.Y * 60 + gameScreen.Y);
                     coinDrawnCount = 1;
                     spriteBatch.Draw(coinPileTexture, newPos, Color.White);
                 }
@@ -277,7 +280,7 @@ namespace TankGameSample
         {
             foreach (Bullet bullet in handler.bullets)
             {
-                Vector2 pos = new Vector2(bullet.position.X + gameScreen.X + 15, bullet.position.Y + gameScreen.Y + 15);
+                Vector2 pos = new Vector2(bullet.position.X + gameScreen.X + 30, bullet.position.Y + gameScreen.Y + 30);
                 try
                 {
                     spriteBatch.Draw(bulletTexture, pos, null, Color.White, bullet.direction * MathHelper.PiOver2, new Vector2(15, 15), 1, SpriteEffects.None, 0);
@@ -293,7 +296,7 @@ namespace TankGameSample
         {
             foreach (LifePack pack in handler.lifePacks)
             {
-                Vector2 newPos = new Vector2(pack.position.X * 30 + gameScreen.X, pack.position.Y * 30 + gameScreen.Y);
+                Vector2 newPos = new Vector2(pack.position.X * 60 + gameScreen.X, pack.position.Y * 60 + gameScreen.Y);
                 lifePackDrawnCount = 1;
                 spriteBatch.Draw(lifePackTexture, newPos, Color.White);
             }
@@ -325,17 +328,30 @@ namespace TankGameSample
         }
 
 
-        /*public void processKeyBoardInput()
+        public void processKeyBoardInput()
         {
             KeyboardState s = Keyboard.GetState();
+            if (s.IsKeyDown(Keys.Left))
+            {
+                handler.moveTank("LEFT#");
+            }
+            if (s.IsKeyDown(Keys.Right))
+            {
+                handler.moveTank("RIGHT#");
+            }
+            if (s.IsKeyDown(Keys.Up))
+            {
+                handler.moveTank("UP#");
+            }
+            if (s.IsKeyDown(Keys.Down))
+            {
+                handler.moveTank("DOWN#");
+            }
             if (s.IsKeyDown(Keys.Enter))
             {
-                while (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-                }
                 handler.shoot();
             }
-        }*/
+        }
 
 
         public void processMouseInput()

@@ -328,7 +328,7 @@ namespace TankGameSample
         }
 
 
-        public void processKeyBoardInput()
+       /* public void processKeyBoardInput()
         {
             KeyboardState s = Keyboard.GetState();
             if (s.IsKeyDown(Keys.Left))
@@ -351,7 +351,7 @@ namespace TankGameSample
             {
                 handler.shoot();
             }
-        }
+        }*/
 
 
         public void processMouseInput()

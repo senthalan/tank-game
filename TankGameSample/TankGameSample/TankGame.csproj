@@ -72,17 +72,11 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Box.cs" />
-    <Compile Include="Bullet.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="Coins.cs" />
     <Compile Include="Handler.cs" />
-    <Compile Include="LifePack.cs" />
-    <Compile Include="Obstacle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Tank.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

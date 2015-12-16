@@ -65,14 +65,11 @@ namespace TankGameSample
             {
                 return false;
             }
-            //return reply;
         }
 
         public Boolean processReply(Rectangle aScreen)
         {
             indicator = serverReply.Substring(0, 2);
-            if (indicator == "I:" || indicator == "G:" || indicator == "S:" || indicator == "C:" || indicator == "L:")
-            {
                 if (indicator == "I:")
                 {
                     playerNum = serverReply.ElementAt<char>(serverReply.IndexOf('P') + 1) - 48;
@@ -95,11 +92,6 @@ namespace TankGameSample
                     createLifePack();
                 }
                 return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         public void createCoinPile()
@@ -400,24 +392,14 @@ namespace TankGameSample
                     else if (i == 1)
                     {
                         type = "water";
-                    }
-                    else
-                    {
-
-                    }
-                    
+                    }  
                 }
             }
-            else
-            {
-            }
-
         }
         
 
         public void updateBullets()
         {
-            
             try
             {
                 List<Bullet> toBeRemoved = new List<Bullet>();
@@ -483,7 +465,6 @@ namespace TankGameSample
                 foreach (Bullet bullet in toBeRemoved){
                     bullets.Remove(bullet);
                 }
-
             }
             catch(Exception e)
             {

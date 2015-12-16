@@ -18,7 +18,7 @@ namespace TankGameSample
         public Color Color;
         public float Angle;
         public float Power;
-        public KeyboardState OldKeyState;
+        KeyboardState oldState;
     }
 
     public struct ParticleData
@@ -118,7 +118,7 @@ namespace TankGameSample
             time += gameTime.ElapsedGameTime.Milliseconds;
 
             processMouseInput();
-            //processKeyBoardInput();
+            processKeyBoardInput();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
@@ -328,30 +328,33 @@ namespace TankGameSample
         }
 
 
-       /* public void processKeyBoardInput()
+       public void processKeyBoardInput()
         {
+            KeyboardState oldState;
             KeyboardState s = Keyboard.GetState();
-            if (s.IsKeyDown(Keys.Left))
+            if ((s.IsKeyDown(Keys.Left)) && !oldState.IsKeyDown(Keys.Left))
             {
                 handler.moveTank("LEFT#");
             }
-            if (s.IsKeyDown(Keys.Right))
+            if ((s.IsKeyDown(Keys.Right)) && !oldState.IsKeyDown(Keys.Right))
             {
                 handler.moveTank("RIGHT#");
             }
-            if (s.IsKeyDown(Keys.Up))
+            if ((s.IsKeyDown(Keys.Up)) && !oldState.IsKeyDown(Keys.Up))
             {
                 handler.moveTank("UP#");
             }
-            if (s.IsKeyDown(Keys.Down))
+            if ((s.IsKeyDown(Keys.Down)) && !oldState.IsKeyDown(Keys.Down))
             {
                 handler.moveTank("DOWN#");
             }
-            if (s.IsKeyDown(Keys.Enter))
+            if ((s.IsKeyDown(Keys.Enter)) && !oldState.IsKeyDown(Keys.Enter))
             {
                 handler.shoot();
             }
-        }*/
+
+            oldState = s;
+        }
 
 
         public void processMouseInput()

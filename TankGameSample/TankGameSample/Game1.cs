@@ -118,7 +118,7 @@ namespace TankGameSample
             time += gameTime.ElapsedGameTime.Milliseconds;
 
             processMouseInput();
-            processKeyBoardInput();
+            //processKeyBoardInput();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 

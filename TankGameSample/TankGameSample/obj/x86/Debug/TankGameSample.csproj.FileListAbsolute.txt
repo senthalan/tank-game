@@ -1,0 +1,15 @@
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\TankGameSample.exe
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\TankGameSample.pdb
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.csprojResolveAssemblyReference.cache
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.exe
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.pdb
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\background.xnb
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\foreground.xnb
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\cannon.xnb
+c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\carriage.xnb
+C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\explosion.xnb
+C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\ground.xnb
+C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\rocket.xnb
+C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\smoke.xnb
+C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\myFont.xnb

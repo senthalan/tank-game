@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>background.jpg</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2015-11-20T22:03:53.8508767+05:30</Time>
+    </Item>
+    <Item>
+      <Source>foreground.png</Source>
+      <Name>foreground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\foreground.xnb</Output>
+      <Time>2015-11-20T22:03:53.8668881+05:30</Time>
+    </Item>
+    <Item>
+      <Source>cannon.png</Source>
+      <Name>cannon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\cannon.xnb</Output>
+      <Time>2015-11-20T22:03:53.8568814+05:30</Time>
+    </Item>
+    <Item>
+      <Source>carriage.png</Source>
+      <Name>carriage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>c:\users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\carriage.xnb</Output>
+      <Time>2015-11-20T22:03:53.8598851+05:30</Time>
+    </Item>
+    <Item>
+      <Source>explosion.png</Source>
+      <Name>explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\explosion.xnb</Output>
+      <Time>2015-11-20T22:03:53.8638866+05:30</Time>
+    </Item>
+    <Item>
+      <Source>ground.jpg</Source>
+      <Name>ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\ground.xnb</Output>
+      <Time>2015-11-20T22:03:53.8708914+05:30</Time>
+    </Item>
+    <Item>
+      <Source>rocket.png</Source>
+      <Name>rocket</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\rocket.xnb</Output>
+      <Time>2015-11-20T22:03:53.8738955+05:30</Time>
+    </Item>
+    <Item>
+      <Source>smoke.png</Source>
+      <Name>smoke</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\smoke.xnb</Output>
+      <Time>2015-11-20T22:03:53.8778966+05:30</Time>
+    </Item>
+    <Item>
+      <Source>myFont.spritefont</Source>
+      <Name>myFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2015-11-20T22:11:08.1290933+05:30</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{F6B5290C-A356-42F6-AF74-DB624DADC7FA}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSampleContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\sentha\documents\visual studio 2013\Projects\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-11-13T08:59:09.7868483+05:30</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="Box.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="PriorityQueue.cs" />
+    <Compile Include="SpatialAStar.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Coins.cs" />
     <Compile Include="Handler.cs" />

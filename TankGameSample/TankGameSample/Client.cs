@@ -44,7 +44,6 @@ namespace TankGameSample
 
         public void send(String message)
         {
-            Console.WriteLine(message);
             connCount = 0;
             clientSocket = new System.Net.Sockets.TcpClient();
             connect();

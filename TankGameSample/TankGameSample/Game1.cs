@@ -18,7 +18,7 @@ namespace TankGameSample
         public Color Color;
         public float Angle;
         public float Power;
-        KeyboardState oldState;
+        public KeyboardState OldKeyState;
     }
 
     public struct ParticleData
@@ -106,12 +106,8 @@ namespace TankGameSample
             tryAgainTexture = Content.Load<Texture2D>("tryAgain");
             tryAgainButton = new Rectangle(graphics.PreferredBackBufferWidth / 2 - 225, graphics.PreferredBackBufferHeight / 2 - 50, 200, 100);
             exitTexture = Content.Load<Texture2D>("exitButton2");
-            exit = new Rectangle(graphics.PreferredBackBufferWidth / 2 + 25, graphics.PreferredBackBufferHeight / 2 - 50, 200, 100);
-            
+            exit = new Rectangle(graphics.PreferredBackBufferWidth / 2 + 25, graphics.PreferredBackBufferHeight / 2 - 50, 200, 100);            
         }
-
-
-
 
         protected override void Update(GameTime gameTime)
         {
@@ -330,30 +326,27 @@ namespace TankGameSample
 
        public void processKeyBoardInput()
         {
-            KeyboardState oldState;
             KeyboardState s = Keyboard.GetState();
-            if ((s.IsKeyDown(Keys.Left)) && !oldState.IsKeyDown(Keys.Left))
+            if (s.IsKeyDown(Keys.Left))
             {
                 handler.moveTank("LEFT#");
             }
-            if ((s.IsKeyDown(Keys.Right)) && !oldState.IsKeyDown(Keys.Right))
+            if (s.IsKeyDown(Keys.Right))
             {
                 handler.moveTank("RIGHT#");
             }
-            if ((s.IsKeyDown(Keys.Up)) && !oldState.IsKeyDown(Keys.Up))
+            if (s.IsKeyDown(Keys.Up))
             {
                 handler.moveTank("UP#");
             }
-            if ((s.IsKeyDown(Keys.Down)) && !oldState.IsKeyDown(Keys.Down))
+            if (s.IsKeyDown(Keys.Down))
             {
                 handler.moveTank("DOWN#");
             }
-            if ((s.IsKeyDown(Keys.Enter)) && !oldState.IsKeyDown(Keys.Enter))
+            if (s.IsKeyDown(Keys.Enter))
             {
                 handler.shoot();
             }
-
-            oldState = s;
         }
 
 

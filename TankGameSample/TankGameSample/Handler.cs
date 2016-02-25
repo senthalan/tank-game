@@ -15,10 +15,12 @@ namespace TankGameSample
         public List<Coins> coinPiles;
         public List<LifePack> lifePacks;
         public String indicator;
+        public String nextMove;
         public Box[,] grid2;
         public Vector2 position;
         public int playerNum;
         public List<Bullet> bullets;
+        public MyPathNode[,] grid;
 
 
         public Handler()
@@ -29,6 +31,7 @@ namespace TankGameSample
             lifePacks = new List<LifePack>();
             grid2 = new Box[10, 10];
             bullets = new List<Bullet>();
+            grid = new MyPathNode[10, 10];
             serverReply = null;
         }
 
@@ -70,28 +73,28 @@ namespace TankGameSample
         public Boolean processReply(Rectangle aScreen)
         {
             indicator = serverReply.Substring(0, 2);
-                if (indicator == "I:")
-                {
-                    playerNum = serverReply.ElementAt<char>(serverReply.IndexOf('P') + 1) - 48;
-                    createObstacles();
-                }
-                else if (indicator == "G:")
-                {
-                    update();
-                }
-                else if (indicator == "S:")
-                {
-                    createTanks(aScreen);
-                }
-                else if (indicator == "C:")
-                {
-                    createCoinPile();
-                }
-                else
-                {
-                    createLifePack();
-                }
-                return true;
+            if (indicator == "I:")
+            {
+                playerNum = serverReply.ElementAt<char>(serverReply.IndexOf('P') + 1) - 48;
+                createObstacles();
+            }
+            else if (indicator == "G:")
+            {
+                update();
+            }
+            else if (indicator == "S:")
+            {
+                createTanks(aScreen);
+            }
+            else if (indicator == "C:")
+            {
+                createCoinPile();
+            }
+            else
+            {
+                createLifePack();
+            }
+            return true;
         }
 
         public void createCoinPile()
@@ -99,10 +102,10 @@ namespace TankGameSample
             String[] parts = serverReply.Split(':');
             String[] pos = parts[1].Split(',');
             coinPiles.Add(new Coins(int.Parse(parts[2]), int.Parse(parts[3]), new Vector2(int.Parse(pos[0]), int.Parse(pos[1]))));
-            
+
         }
 
-        
+
 
         public int updateCoinPile(int aTime)
         {
@@ -133,9 +136,10 @@ namespace TankGameSample
             return coinPiles.Count;
         }
 
-        public void killTank(int i){
-                this.tanks[i].status = 1;
-             
+        public void killTank(int i)
+        {
+            this.tanks[i].status = 1;
+
         }
 
         public int updateLifePacks(int aTime)
@@ -188,6 +192,14 @@ namespace TankGameSample
             client.receive();
         }
 
+        public void moveTank()
+        {
+            this.findPath();
+            this.findNext();
+            client.send(nextMove);
+            client.receive();
+        }
+
         public void update()
         {
             String[] parts = serverReply.Split(':');
@@ -199,8 +211,8 @@ namespace TankGameSample
                     String[] positionArray = playerParts[1].Split(',');
                     Vector2 pos = new Vector2(int.Parse(positionArray[0]), int.Parse(positionArray[1])); // the position of a bullet is taken in pixels
                     tanks[i - 1].position = pos;
-                    
-                    
+
+
                     int dir = Int32.Parse(playerParts[2]);
                     tanks[i - 1].direction = dir;
                     if (playerParts[3] == "0")
@@ -241,7 +253,7 @@ namespace TankGameSample
                                 }
                         }
                         bullets.Add(new Bullet(dir, bulletPosition));
-                        
+
                     }
                     tanks[i - 1].health = Int32.Parse(playerParts[4]);
                     tanks[i - 1].coins = Int32.Parse(playerParts[5]);
@@ -271,17 +283,23 @@ namespace TankGameSample
                         {
                             obstacles.RemoveAt(j);
                         }
-                        else { 
-                            obstacles.ElementAt(j).damageLevel = damageLevel; 
+                        else
+                        {
+                            obstacles.ElementAt(j).damageLevel = damageLevel;
                         }
 
                     }
                 }
+
+
+
+            //  AI code 
+
             position = tanks[playerNum].position;
             Boolean inLineX = false;
             Boolean inLineY = false;
-            List<Tank> inLineXTanks= new List<Tank>();
-            List<Tank> inLineYTanks= new List<Tank>();
+            List<Tank> inLineXTanks = new List<Tank>();
+            List<Tank> inLineYTanks = new List<Tank>();
 
             for (int i = 0; i < tanks.Length; i++)
             {
@@ -289,12 +307,12 @@ namespace TankGameSample
                 {
                     continue;
                 }
-                if (position.X == tanks[i].position.X && Math.Abs(position.Y - tanks[i].position.Y) < 5)
+                if (position.X == tanks[i].position.X)
                 {
                     inLineX = true;
                     inLineXTanks.Add(tanks[i]);
                 }
-                else if (position.Y == tanks[i].position.Y && Math.Abs(position.X - tanks[i].position.X) < 5)
+                else if (position.Y == tanks[i].position.Y)
                 {
                     inLineY = true;
                     inLineYTanks.Add(tanks[i]);
@@ -359,6 +377,10 @@ namespace TankGameSample
 
                 }
             }
+            else
+            {
+                moveTank();
+            }
         }
 
         public void send(String aMessage)
@@ -376,9 +398,9 @@ namespace TankGameSample
                 String type = "brickWall";
                 for (int i = 0; i < obstaclePositions.Length; i++)
                 {
-                    
+
                     String[] posPairs = obstaclePositions[i].Split(';');
-                    for (int j = 0; j < posPairs.Length;j++)
+                    for (int j = 0; j < posPairs.Length; j++)
                     {
                         String[] pair = posPairs[j].Split(',');
                         Vector2 place = new Vector2(int.Parse(pair[0]), int.Parse(pair[1]));
@@ -392,11 +414,11 @@ namespace TankGameSample
                     else if (i == 1)
                     {
                         type = "water";
-                    }  
+                    }
                 }
             }
         }
-        
+
 
         public void updateBullets()
         {
@@ -405,7 +427,7 @@ namespace TankGameSample
                 List<Bullet> toBeRemoved = new List<Bullet>();
                 foreach (Bullet bullet in bullets)
                 {
-                    Boolean bulletHit = false; 
+                    Boolean bulletHit = false;
                     if (bullet.direction == 0)
                     {
                         if (bullet.position.Y > 8)
@@ -414,17 +436,18 @@ namespace TankGameSample
                         }
                         else
                         {
-                            bullet.hit=true;
+                            bullet.hit = true;
                             bulletHit = true;
                         }
                     }
                     else if (bullet.direction == 1)
                     {
-                        if (bullet.position.X <562)
+                        if (bullet.position.X < 562)
                         {
                             bullet.position.X = bullet.position.X + 9;
                         }
-                        else {
+                        else
+                        {
                             bullet.hit = true;
                             bulletHit = true;
                         }
@@ -462,13 +485,139 @@ namespace TankGameSample
                         toBeRemoved.Add(bullet);
                     }
                 }
-                foreach (Bullet bullet in toBeRemoved){
+                foreach (Bullet bullet in toBeRemoved)
+                {
                     bullets.Remove(bullet);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                
+
+            }
+        }
+        public void findPath()
+        {
+            aStar = new MySolver<MyPathNode, Object>(grid);
+            try
+            {
+                if (tanks[playerNum].health < 70)
+                {
+                    if (lifePacks.ElementAt<LifePack>(0) != null)
+                    {
+                        path = aStar.Search(new Vector2(position.X, position.Y), lifePacks, null, tanks[playerNum].direction);
+                    }
+                    else
+                    {
+                        path = aStar.Search(new Vector2(position.X, position.Y), coinPiles, null, tanks[playerNum].direction);
+                    }
+                }
+                else
+                {
+                    if (coinPiles.ElementAt<Coins>(0) == null)
+                    {
+                        path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(10, 10), null, tanks[playerNum].direction);
+                    }
+                    else
+                    {
+                        path = aStar.Search(new Vector2(position.X, position.Y), coinPiles, null, tanks[playerNum].direction);
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(10, 10), null, tanks[playerNum].direction);
+            }
+
+        }
+        IEnumerable<MyPathNode> path;
+        MySolver<MyPathNode, Object> aStar;
+
+        public class MySolver<TPathNode, TUserContext> : SpatialAStar<TPathNode, TUserContext> where TPathNode : IPathNode<TUserContext>
+        {
+            protected override Double Heuristic(PathNode inStart, PathNode inEnd)
+            {
+                return Math.Abs(inStart.X - inEnd.X) + Math.Abs(inStart.Y - inEnd.Y);
+            }
+
+            protected override Double NeighborDistance(PathNode inStart, PathNode inEnd, int aDirection)
+            {
+                return Heuristic(inStart, inEnd);
+            }
+
+            public MySolver(TPathNode[,] inGrid)
+                : base(inGrid)
+            {
+            }
+        }
+
+        public class MyPathNode : IPathNode<Object>
+        {
+            public Int32 X { get; set; }
+            public Int32 Y { get; set; }
+            public Boolean IsWall { get; set; }
+
+            public bool IsWalkable(object usUsed)
+            {
+                return !IsWall;
+            }
+        }
+
+        public void findNext()
+        {
+            int counter = 0;
+            try
+            {
+                foreach (MyPathNode node in path)
+                {
+                    if (counter == 0)
+                    {
+                        counter++;
+                        continue;
+                    }
+                    Vector2 p = new Vector2(node.X, node.Y);
+                    if (p.X == position.X)
+                    {
+                        if (p.Y == position.Y - 1)
+                        {
+                            nextMove = "UP#";
+                        }
+                        else if (p.Y == position.Y + 1)
+                        {
+                            nextMove = "DOWN#";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong algo!!!!!!!!!!!!!!" + p.Y + "\t" + position.Y);
+                        }
+
+                    }
+                    else if (p.Y == position.Y)
+                    {
+                        if (p.X == position.X - 1)
+                        {
+                            nextMove = "LEFT#";
+                        }
+                        else if (p.X == position.X + 1)
+                        {
+                            nextMove = "RIGHT#";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong algo!!!!!!!!!!!!!!" + p.X + "\t" + position.X);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong algo!!!!!!!!!!!!!!" + p.X + "\t" + position.X + "\t" + p.Y + "\t" + position.Y);
+                    }
+                    break;
+                }
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("No path found!!!");
+                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(10, 10), null, tanks[playerNum].direction);
+                this.findNext();
             }
         }
     }

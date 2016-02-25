@@ -208,9 +208,18 @@ namespace TankGameSample
                 if (parts[i].ElementAt(0) == 'P')
                 {
                     playerParts = parts[i].Split(';');
+                    grid[(int)tanks[i - 1].position.X, (int)tanks[i - 1].position.Y].IsWall = false;
                     String[] positionArray = playerParts[1].Split(',');
                     Vector2 pos = new Vector2(int.Parse(positionArray[0]), int.Parse(positionArray[1])); // the position of a bullet is taken in pixels
                     tanks[i - 1].position = pos;
+
+
+                    grid[(int)tanks[i - 1].position.X, (int)tanks[i - 1].position.Y] = new MyPathNode()
+                    {
+                        IsWall = true,
+                        X = (int)tanks[i - 1].position.X,
+                        Y = (int)tanks[i - 1].position.Y,
+                    };
 
 
                     int dir = Int32.Parse(playerParts[2]);
@@ -393,7 +402,11 @@ namespace TankGameSample
 
             if (serverReply.ElementAt<char>(0) == 'I')
             {
+                ///Console.WriteLine(serverReply.IndexOf('P'));
+                //Console.WriteLine(serverReply.Length);
                 String positions = serverReply.Substring(serverReply.IndexOf('P') + 3, (serverReply.Length - serverReply.IndexOf('P') - 3));
+                ///Console.WriteLine(positions);
+                ///String[] brickPositions = new String[3];
                 String[] obstaclePositions = positions.Split(':');
                 String type = "brickWall";
                 for (int i = 0; i < obstaclePositions.Length; i++)
@@ -405,6 +418,12 @@ namespace TankGameSample
                         String[] pair = posPairs[j].Split(',');
                         Vector2 place = new Vector2(int.Parse(pair[0]), int.Parse(pair[1]));
                         obstacles.Add(new Obstacle(type, place));
+                        grid[(int)place.X, (int)place.Y] = new MyPathNode()
+                        {
+                            IsWall = true,
+                            X = (int)place.X,
+                            Y = (int)place.Y,
+                        };
                     }
 
                     if (i == 0)
@@ -415,10 +434,34 @@ namespace TankGameSample
                     {
                         type = "water";
                     }
+                    else
+                    {
+
+                    }
+
                 }
+                for (int k = 0; k < 20; k++)
+                {
+                    for (int l = 0; l < 20; l++)
+                    {
+                        if (grid[k, l] == null)
+                        {
+                            grid[k, l] = new MyPathNode()
+                            {
+                                IsWall = false,
+                                X = k,
+                                Y = l,
+                            };
+                        }
+                    }
+
+                }
+
+            }
+            else
+            {
             }
         }
-
 
         public void updateBullets()
         {
@@ -495,6 +538,40 @@ namespace TankGameSample
 
             }
         }
+
+        public void computeCost(int source_x, int source_y, int dest_x, int dest_y)
+        {
+            Box source = grid2[source_x, source_y];
+            for (int k = source_x - 1; k <= source_x + 1; k = k + 2)
+            {
+                for (int l = source_y - 1; l <= source_y + 1; l = l + 2)
+                {
+                    if (k == source_x && l == source_y)
+                    {
+                        source.f = 1;
+                        source.computed = true;
+                    }
+                    else
+                    {
+                        Box b = grid2[k, l];
+                        if (b.computed == true)
+                        {
+                            source.f = b.f + 1;
+                            source.computed = true;
+                        }
+                        else if (b.computing == true)
+                        {
+
+                        }
+                        else
+                        {
+                            computeCost(k, l, dest_x, dest_y);
+                        }
+                    }
+                }
+            }
+        }
+      
         public void findPath()
         {
             aStar = new MySolver<MyPathNode, Object>(grid);

@@ -29,7 +29,7 @@ namespace TankGameSample
             obstacles = new List<Obstacle>();
             coinPiles = new List<Coins>();
             lifePacks = new List<LifePack>();
-            grid2 = new Box[10, 10];
+            grid2 = new Box[11, 11];
             bullets = new List<Bullet>();
             grid = new MyPathNode[10, 10];
             serverReply = null;
@@ -63,6 +63,11 @@ namespace TankGameSample
             {
                 serverReply = reply;
                 return this.processReply(aScreen);
+            }
+            else if (reply == "GAME_FINISHED")
+            {
+                //finsih game
+                return false;
             }
             else
             {
@@ -304,7 +309,7 @@ namespace TankGameSample
 
             //  AI code 
 
-            position = tanks[playerNum].position;
+            /*position = tanks[playerNum].position;
             Boolean inLineX = false;
             Boolean inLineY = false;
             List<Tank> inLineXTanks = new List<Tank>();
@@ -389,7 +394,8 @@ namespace TankGameSample
             else
             {
                 moveTank();
-            }
+            }*/
+            moveTank();
         }
 
         public void send(String aMessage)
@@ -440,9 +446,9 @@ namespace TankGameSample
                     }
 
                 }
-                for (int k = 0; k < 20; k++)
+                for (int k = 0; k < 10; k++)
                 {
-                    for (int l = 0; l < 20; l++)
+                    for (int l = 0; l < 10; l++)
                     {
                         if (grid[k, l] == null)
                         {
@@ -592,7 +598,7 @@ namespace TankGameSample
                 {
                     if (coinPiles.ElementAt<Coins>(0) == null)
                     {
-                        path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(10, 10), null, tanks[playerNum].direction);
+                        path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(9, 9), null, tanks[playerNum].direction);
                     }
                     else
                     {
@@ -602,7 +608,7 @@ namespace TankGameSample
             }
             catch (ArgumentOutOfRangeException e)
             {
-                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(10, 10), null, tanks[playerNum].direction);
+                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(9, 9), null, tanks[playerNum].direction);
             }
 
         }
@@ -693,7 +699,7 @@ namespace TankGameSample
             catch (NullReferenceException e)
             {
                 Console.WriteLine("No path found!!!");
-                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(10, 10), null, tanks[playerNum].direction);
+                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(9, 9), null, tanks[playerNum].direction);
                 this.findNext();
             }
         }

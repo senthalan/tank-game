@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TankGameSample
 {
-    class Coins
+    public class Coins
     {
         public int lifeTime, value, spentTime;
         public Vector2 position;

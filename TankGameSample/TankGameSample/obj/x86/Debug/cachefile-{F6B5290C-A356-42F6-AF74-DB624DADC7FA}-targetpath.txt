@@ -9,6 +9,6 @@ Content\stoneWall.xnb
 Content\tank.xnb
 Content\tryAgain.xnb
 Content\water.xnb
-Content\PlayerStatistics.xnb
 Content\coin.xnb
 Content\life.xnb
+Content\PlayerStatistics.xnb

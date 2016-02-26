@@ -136,7 +136,7 @@ namespace TankGameSample
         public LinkedList<TPathNode> Search(Vector2 inStartNode, List<Coins> aCoinList, TUserContext inUserContext, int aDirection)
         {
             PathNode startNode = m_SearchSpace[(int)inStartNode.X, (int)inStartNode.Y];
-            Vector2 endPos = new Vector2(10, 10);
+            Vector2 endPos = new Vector2(9, 9);
             Double heuristic = 2000;
             foreach (Coins pile in aCoinList)
             {
@@ -158,7 +158,7 @@ namespace TankGameSample
         public LinkedList<TPathNode> Search(Vector2 inStartNode, List<LifePack> aLifeList, TUserContext inUserContext, int aDirection)
         {
             PathNode startNode = m_SearchSpace[(int)inStartNode.X, (int)inStartNode.Y];
-            Vector2 endPos = new Vector2(10, 10);
+            Vector2 endPos = new Vector2(9, 9);
             Double heuristic = 2000;
             foreach (LifePack pack in aLifeList)
             {

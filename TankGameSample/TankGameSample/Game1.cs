@@ -11,28 +11,6 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TankGameSample
 {
-    public struct PlayerData
-    {
-        public Vector2 Position;
-        public bool IsAlive;
-        public Color Color;
-        public float Angle;
-        public float Power;
-        public KeyboardState OldKeyState;
-    }
-
-    public struct ParticleData
-    {
-        public float BirthTime;
-        public float MaxAge;
-        public Vector2 OrginalPosition;
-        public Vector2 Accelaration;
-        public Vector2 Direction;
-        public Vector2 Position;
-        public float Scaling;
-        public Color ModColor;
-    }
-
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         Handler handler;
@@ -114,7 +92,7 @@ namespace TankGameSample
             time += gameTime.ElapsedGameTime.Milliseconds;
 
             processMouseInput();
-            processKeyBoardInput();
+           // processKeyBoardInput();
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
@@ -279,11 +257,11 @@ namespace TankGameSample
                 Vector2 pos = new Vector2(bullet.position.X + gameScreen.X + 30, bullet.position.Y + gameScreen.Y + 30);
                 try
                 {
-                    spriteBatch.Draw(bulletTexture, pos, null, Color.White, bullet.direction * MathHelper.PiOver2, new Vector2(15, 15), 1, SpriteEffects.None, 0);
+                    spriteBatch.Draw(bulletTexture, pos, null, Color.White, bullet.direction * MathHelper.PiOver2, new Vector2(30, 30), 1, SpriteEffects.None, 0);
                 }
                 catch (NullReferenceException e)
                 {
-                    spriteBatch.Draw(bulletTexture, pos, null, Color.White, bullet.direction * MathHelper.PiOver2, new Vector2(15, 15), 1, SpriteEffects.None, 0);
+                    spriteBatch.Draw(bulletTexture, pos, null, Color.White, bullet.direction * MathHelper.PiOver2, new Vector2(30, 30), 1, SpriteEffects.None, 0);
                 }
             }
         }
@@ -303,17 +281,33 @@ namespace TankGameSample
             spriteBatch.DrawString(statistics, "Player Statistics", new Vector2(statisticScreen.Left + 85, statisticScreen.Top + 50), Color.White);
             spriteBatch.DrawString(statistics, "Points   Coins   Health", new Vector2(statisticScreen.Left + 100, statisticScreen.Top + 100), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
             int i = 0;
-            foreach (Tank tank in handler.tanks)
+            for (int ta=0;ta<handler.tanks.Length;ta++)
             {
-                if (tank.health == 0)
+                Tank tank=handler.tanks[ta];
+                if (handler.playerNum == ta)
                 {
-                    spriteBatch.DrawString(statistics, tank.name + "            " + tank.points + "          " + tank.coins + "         " + tank.health + "         dead", new Vector2(statisticScreen.Left + 50, statisticScreen.Top + 150 + (50 * i)), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
+                    if (tank.health == 0)
+                    {
+                        spriteBatch.DrawString(statistics, tank.name + "  You       " + tank.points + "          " + tank.coins + "         " + tank.health + "         dead", new Vector2(statisticScreen.Left + 50, statisticScreen.Top + 150 + (50 * i)), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
+                    }
+                    else
+                    {
+                        spriteBatch.DrawString(statistics, tank.name + "  You       " + tank.points + "          " + tank.coins + "         " + tank.health, new Vector2(statisticScreen.Left + 50, statisticScreen.Top + 150 + (50 * i)), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
+                    }
+                    i++;
                 }
                 else
                 {
-                    spriteBatch.DrawString(statistics, tank.name + "            " + tank.points + "          " + tank.coins + "         " + tank.health, new Vector2(statisticScreen.Left + 50, statisticScreen.Top + 150 + (50 * i)), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
+                    if (tank.health == 0)
+                    {
+                        spriteBatch.DrawString(statistics, tank.name + "            " + tank.points + "          " + tank.coins + "         " + tank.health + "         dead", new Vector2(statisticScreen.Left + 50, statisticScreen.Top + 150 + (50 * i)), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
+                    }
+                    else
+                    {
+                        spriteBatch.DrawString(statistics, tank.name + "            " + tank.points + "          " + tank.coins + "         " + tank.health, new Vector2(statisticScreen.Left + 50, statisticScreen.Top + 150 + (50 * i)), Color.White, 0, new Vector2(0, 0), 0.85f, 0, 0);
+                    }
+                    i++;
                 }
-                i++;
 
             }
         }

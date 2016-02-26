@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace TankGameSample
 {
-    class LifePack
+    public class LifePack
     {
         public int lifeTime;
         public Vector2 position;

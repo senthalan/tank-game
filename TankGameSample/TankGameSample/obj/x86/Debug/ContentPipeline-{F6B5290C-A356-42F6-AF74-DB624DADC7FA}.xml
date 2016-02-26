@@ -101,15 +101,6 @@
       <Time>2015-12-16T12:43:05.6839454+05:30</Time>
     </Item>
     <Item>
-      <Source>PlayerStatistics.spritefont</Source>
-      <Name>PlayerStatistics</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\PlayerStatistics.xnb</Output>
-      <Time>2014-05-15T21:45:50+05:30</Time>
-    </Item>
-    <Item>
       <Source>coin.png</Source>
       <Name>coin</Name>
       <Importer>TextureImporter</Importer>
@@ -127,11 +118,20 @@
       <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\life.xnb</Output>
       <Time>2015-12-16T12:44:12.2544501+05:30</Time>
     </Item>
+    <Item>
+      <Source>PlayerStatistics.spritefont</Source>
+      <Name>PlayerStatistics</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\PlayerStatistics.xnb</Output>
+      <Time>2014-05-15T21:45:50+05:30</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{F6B5290C-A356-42F6-AF74-DB624DADC7FA}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
-      <TargetProfile>Reach</TargetProfile>
+      <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
       <RootDirectory>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSampleContent\</RootDirectory>

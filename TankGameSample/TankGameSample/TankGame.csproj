@@ -87,10 +87,10 @@
     <Compile Include="Tank.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <Content Include="Game.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TankGameSampleContent\TankGameSampleContent.contentproj">

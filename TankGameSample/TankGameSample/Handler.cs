@@ -309,7 +309,7 @@ namespace TankGameSample
 
             //  AI code 
 
-            /*position = tanks[playerNum].position;
+            position = tanks[playerNum].position;
             Boolean inLineX = false;
             Boolean inLineY = false;
             List<Tank> inLineXTanks = new List<Tank>();
@@ -394,8 +394,7 @@ namespace TankGameSample
             else
             {
                 moveTank();
-            }*/
-            moveTank();
+            }
         }
 
         public void send(String aMessage)
@@ -699,7 +698,8 @@ namespace TankGameSample
             catch (NullReferenceException e)
             {
                 Console.WriteLine("No path found!!!");
-                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(9, 9), null, tanks[playerNum].direction);
+                path = aStar.Search(new Vector2(position.X, position.Y), new Vector2(0,0), null, tanks[playerNum].direction);
+               // this.findPath();
                 this.findNext();
             }
         }

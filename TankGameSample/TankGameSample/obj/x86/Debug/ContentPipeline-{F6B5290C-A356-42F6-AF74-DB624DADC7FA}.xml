@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\background.xnb</Output>
-      <Time>2015-12-16T16:00:34.5791647+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2016-03-05T20:31:33.0428679+05:30</Time>
     </Item>
     <Item>
       <Source>brickWall.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\brickWall.xnb</Output>
-      <Time>2015-12-16T12:26:02.316566+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\brickWall.xnb</Output>
+      <Time>2016-03-05T20:31:33.0438652+05:30</Time>
     </Item>
     <Item>
       <Source>bullet.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\bullet.xnb</Output>
-      <Time>2015-12-16T15:15:30.7104491+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\bullet.xnb</Output>
+      <Time>2016-03-05T20:31:33.0448659+05:30</Time>
     </Item>
     <Item>
       <Source>exitButton.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\exitButton.xnb</Output>
-      <Time>2014-05-15T21:45:24+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\exitButton.xnb</Output>
+      <Time>2016-03-05T20:31:33.0508706+05:30</Time>
     </Item>
     <Item>
       <Source>exitButton2.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\exitButton2.xnb</Output>
-      <Time>2014-05-15T21:45:26+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\exitButton2.xnb</Output>
+      <Time>2016-03-05T20:31:33.0518704+05:30</Time>
     </Item>
     <Item>
       <Source>gameBackground.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\gameBackground.xnb</Output>
-      <Time>2014-05-15T21:45:28+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\gameBackground.xnb</Output>
+      <Time>2016-03-05T20:31:33.052872+05:30</Time>
     </Item>
     <Item>
       <Source>JoinButton.jpg</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\JoinButton.xnb</Output>
-      <Time>2014-05-15T21:45:36+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\JoinButton.xnb</Output>
+      <Time>2016-03-05T20:31:33.0248529+05:30</Time>
     </Item>
     <Item>
       <Source>stoneWall.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\stoneWall.xnb</Output>
-      <Time>2015-12-16T12:22:21.4073797+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\stoneWall.xnb</Output>
+      <Time>2016-03-05T20:31:33.0708844+05:30</Time>
     </Item>
     <Item>
       <Source>tank.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\tank.xnb</Output>
-      <Time>2015-12-16T12:29:02.3658585+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\tank.xnb</Output>
+      <Time>2016-03-05T20:31:33.0708844+05:30</Time>
     </Item>
     <Item>
       <Source>tryAgain.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\tryAgain.xnb</Output>
-      <Time>2014-05-15T21:46:00+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\tryAgain.xnb</Output>
+      <Time>2016-03-05T20:31:33.0718842+05:30</Time>
     </Item>
     <Item>
       <Source>water.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\water.xnb</Output>
-      <Time>2015-12-16T12:43:05.6839454+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\water.xnb</Output>
+      <Time>2016-03-05T20:31:33.0728854+05:30</Time>
     </Item>
     <Item>
       <Source>coin.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\coin.xnb</Output>
-      <Time>2015-12-16T12:09:55.1865441+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\coin.xnb</Output>
+      <Time>2016-03-05T20:31:33.0458666+05:30</Time>
     </Item>
     <Item>
       <Source>life.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\life.xnb</Output>
-      <Time>2015-12-16T12:44:12.2544501+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\life.xnb</Output>
+      <Time>2016-03-05T20:31:33.054873+05:30</Time>
     </Item>
     <Item>
       <Source>PlayerStatistics.spritefont</Source>
@@ -124,8 +124,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\PlayerStatistics.xnb</Output>
-      <Time>2014-05-15T21:45:50+05:30</Time>
+      <Output>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\PlayerStatistics.xnb</Output>
+      <Time>2016-03-05T20:31:33.0288532+05:30</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -134,10 +134,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSampleContent\</RootDirectory>
-      <LoggerRootDirectory>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSampleContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -166,7 +166,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-11-13T08:59:09.7868483+05:30</Value>
+        <Value>2015-12-16T21:30:11.4000019+05:30</Value>
       </Assembly>
     </Assemblies>
   </Asset>

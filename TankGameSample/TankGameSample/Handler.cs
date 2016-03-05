@@ -321,17 +321,72 @@ namespace TankGameSample
                 {
                     continue;
                 }
-                if (position.X == tanks[i].position.X)
+                if (position.X == tanks[i].position.X && Math.Abs(position.Y - tanks[i].position.Y) < 5)
                 {
+                   /* bool yClear = true;
+                    if (position.Y < tanks[i].position.Y)
+                    {
+                        for (int y = (int)Math.Ceiling(position.Y); y < tanks[i].position.Y; y++)
+                        {
+                            if (!grid[(int)Math.Ceiling(position.X), y].IsWalkable())
+                            {
+                                yClear = false;
+                                continue;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int y = (int)Math.Ceiling(tanks[i].position.Y); y < position.Y; y++)
+                        {
+                            if (!grid[(int)Math.Ceiling(position.X), y].IsWalkable())
+                            {
+                                yClear = false;
+                                continue;
+                            }
+                        }
+                    }
+                    if (yClear)
+                    {
+                        inLineX = true;
+                        inLineXTanks.Add(tanks[i]);
+                    }*/
                     inLineX = true;
                     inLineXTanks.Add(tanks[i]);
                 }
                 else if (position.Y == tanks[i].position.Y)
                 {
+                    /*bool xClear = true;
+                    if (position.X < tanks[i].position.X)
+                    {
+                        for (int x = (int)Math.Ceiling(position.X); x < tanks[i].position.X; x++)
+                        {
+                            if (!grid[x,(int)Math.Ceiling(position.Y)].IsWalkable())
+                            {
+                                xClear = false;
+                                continue;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int x = (int)Math.Ceiling(tanks[i].position.X); x < position.X; x++)
+                        {
+                            if (!grid[x,(int)Math.Ceiling(position.Y)].IsWalkable())
+                            {
+                                xClear = false;
+                                continue;
+                            }
+                        }
+                    }
+                    if (xClear)
+                    {
+                        inLineY = true;
+                        inLineYTanks.Add(tanks[i]);
+                    }*/
                     inLineY = true;
                     inLineYTanks.Add(tanks[i]);
                 }
-
             }
             if (inLineX == true)
             {
@@ -639,6 +694,11 @@ namespace TankGameSample
             public Boolean IsWall { get; set; }
 
             public bool IsWalkable(object usUsed)
+            {
+                return !IsWall;
+            }
+
+            public bool IsWalkable()
             {
                 return !IsWall;
             }

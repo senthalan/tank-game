@@ -17,4 +17,30 @@ D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankG
 D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.exe
 D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.pdb
+<<<<<<< HEAD
 D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\obj\x86\Debug\TankGame.csprojResolveAssemblyReference.cache
+=======
+D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\PlayerStatistics.xnb
+D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\coin.xnb
+D:\semi nodes\4th semi\programming challenge\TankGameSample\TankGameSample\TankGameSample\bin\x86\Debug\Content\life.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\background.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\brickWall.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\bullet.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\exitButton.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\exitButton2.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\gameBackground.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\JoinButton.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\stoneWall.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\tank.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\tryAgain.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\water.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\coin.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\life.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\Content\PlayerStatistics.xnb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\TankGameSample.exe
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\bin\x86\Debug\TankGameSample.pdb
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\obj\x86\Debug\TankGame.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.exe
+C:\Users\HP\Desktop\New folder\tankgamesample\TankGameSample\TankGameSample\obj\x86\Debug\TankGameSample.pdb
+>>>>>>> c48668e81f0b295258f969a1365a415e82492221
